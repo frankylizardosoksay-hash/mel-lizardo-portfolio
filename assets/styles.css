@@ -157,9 +157,9 @@ section { padding-block: var(--rhythm); }
 
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 4rem);
 }
 
 .hero__copy { position: relative; min-width: 0; }
@@ -180,11 +180,25 @@ section { padding-block: var(--rhythm); }
   object-fit: cover;
 }
 
-.portrait--hero { position: relative; }
+.portrait--hero {
+  position: relative;
+  width: clamp(8rem, 14vw, 11rem);
+  padding: 0.3rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3rem var(--blue);
+}
 
-@media (max-width: 52rem) {
-  .hero__inner { grid-template-columns: 1fr; }
-  .portrait--hero { width: min(100% - 1rem, 21rem); }
+.portrait--hero img { border-radius: 50%; }
+
+@media (max-width: 40rem) {
+  .hero__inner { display: block; }
+  .hero__copy { padding-top: 5rem; }
+  .portrait--hero {
+    position: absolute;
+    top: 1.5rem;
+    right: var(--gutter);
+    width: 6rem;
+  }
 }
 
 .hero__sub {
