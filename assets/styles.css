@@ -155,6 +155,38 @@ section { padding-block: var(--rhythm); }
 
 .hero h1 { max-width: 16ch; position: relative; }
 
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.hero__copy { position: relative; min-width: 0; }
+
+.portrait {
+  margin: 0;
+  padding: 0.5rem;
+  background: var(--field);
+  border: 1px solid var(--line);
+  box-shadow: 1rem 1rem 0 var(--blue);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.portrait--hero { position: relative; }
+
+@media (max-width: 52rem) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .portrait--hero { width: min(100% - 1rem, 21rem); }
+}
+
 .hero__sub {
   font-family: var(--body);
   font-size: clamp(1rem, 0.9rem + 0.55vw, 1.25rem);
@@ -276,6 +308,18 @@ section { padding-block: var(--rhythm); }
 .prose ul { padding-left: 1.1rem; max-width: var(--measure); }
 .prose li { margin-bottom: 0.5rem; }
 
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+@media (max-width: 52rem) {
+  .about-intro { grid-template-columns: 1fr; }
+  .portrait--about { width: min(100% - 1rem, 17rem); }
+}
+
 blockquote {
   margin: 2.5rem 0;
   padding-left: 1.5rem;
@@ -357,6 +401,14 @@ blockquote {
 .btn:hover { background: var(--paper); }
 .btn--line { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 2px var(--line); }
 .btn--line:hover { background: var(--field-2); color: var(--paper); }
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
 
 /* ---------- Placeholder marker (delete these as you fill the site) ---------- */
 
