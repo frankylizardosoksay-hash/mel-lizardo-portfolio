@@ -324,14 +324,29 @@ section { padding-block: var(--rhythm); }
 
 .about-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
+  grid-template-columns: minmax(0, 1fr) 11rem;
   align-items: start;
   gap: clamp(2rem, 5vw, 5rem);
 }
 
-@media (max-width: 52rem) {
-  .about-intro { grid-template-columns: 1fr; }
-  .portrait--about { width: min(100% - 1rem, 17rem); }
+.portrait--about {
+  width: 11rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3rem var(--blue);
+}
+
+.portrait--about img { border-radius: 50%; }
+
+@media (max-width: 40rem) {
+  .about-intro { display: block; position: relative; }
+  .about-intro .prose { padding-top: 6.5rem; }
+  .portrait--about {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6rem;
+  }
 }
 
 blockquote {
